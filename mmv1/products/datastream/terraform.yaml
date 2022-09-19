@@ -89,3 +89,13 @@ overrides: !ruby/object:Overrides::ResourceOverrides
         vars:
           private_connection_id: "my-connection"
           network_name: "my-network"
+  Stream: !ruby/object:Overrides::Terraform::ResourceOverride
+    id_format: projects/{{project}}/locations/{{location}}/streams/{{stream_id}}
+    import_format: ["projects/{{project}}/locations/{{location}}/streams/{{stream_id}}"]
+    properties:
+      sourceConfig.oracleSourceConfig.maxConcurrentCdcTasks: !ruby/object:Overrides::Terraform::PropertyOverride
+        validation: !ruby/object:Provider::Terraform::Validation
+          function: 'validation.IntAtLeast(0)'
+      sourceConfig.mysqlSourceConfig.maxConcurrentCdcTasks: !ruby/object:Overrides::Terraform::PropertyOverride
+        validation: !ruby/object:Provider::Terraform::Validation
+          function: 'validation.IntAtLeast(0)'
