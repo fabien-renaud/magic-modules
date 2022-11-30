@@ -333,7 +333,7 @@ objects:
       - !ruby/object:Api::Type::String
         name: 'location'
         description: |
-          The name of the location this connection is located in.
+          The name of the location this private connection is located in.
         required: true
         input: true
         url_param_only: true
@@ -420,6 +420,7 @@ objects:
             name: 'mysqlSourceConfig'
             allow_empty_object: true
             send_empty_value: true
+            required: true
             description: |
               MySQL data source configuration.
             properties:
@@ -445,7 +446,6 @@ objects:
                             Database name.
                         - !ruby/object:Api::Type::Array
                           name: 'mysqlTables'
-                          required: true
                           min_size: 1
                           description: |
                             Tables in the database.
@@ -460,7 +460,6 @@ objects:
                                   Table name.
                               - !ruby/object:Api::Type::Array
                                 name: 'mysqlColumns'
-                                required: true
                                 min_size: 1
                                 description: |
                                   MySQL columns in the schema. When unspecified as part of include/exclude objects, includes/excludes everything.
@@ -519,7 +518,6 @@ objects:
                             Database name.
                         - !ruby/object:Api::Type::Array
                           name: 'mysqlTables'
-                          required: true
                           min_size: 1
                           description: |
                             Tables in the database.
@@ -534,7 +532,6 @@ objects:
                                   Table name.
                               - !ruby/object:Api::Type::Array
                                 name: 'mysqlColumns'
-                                required: true
                                 min_size: 1
                                 description: |
                                   MySQL columns in the schema. When unspecified as part of include/exclude objects, includes/excludes everything.
@@ -730,7 +727,6 @@ objects:
                         Database name.
                     - !ruby/object:Api::Type::Array
                       name: 'mysqlTables'
-                      required: true
                       min_size: 1
                       description: |
                         Tables in the database.
@@ -745,7 +741,6 @@ objects:
                               Table name.
                           - !ruby/object:Api::Type::Array
                             name: 'mysqlColumns'
-                            required: true
                             min_size: 1
                             description: |
                               MySQL columns in the schema. When unspecified as part of include/exclude objects, includes/excludes everything.
