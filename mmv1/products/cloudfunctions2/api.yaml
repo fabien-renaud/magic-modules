@@ -349,7 +349,9 @@ objects:
               region. If not provided, defaults to the same region as the function.
           - !ruby/object:Api::Type::String
             name: 'eventType'
-            description: 'Required. The type of event to observe.'
+            description: |
+              The type of event to observe.
+            required: true
           - !ruby/object:Api::Type::Array
             name: 'eventFilters'
             description: 'Criteria used to filter events.'
